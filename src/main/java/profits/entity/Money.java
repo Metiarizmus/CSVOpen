@@ -1,4 +1,4 @@
-package Profits.entity;
+package profits.entity;
 
 public class Money {
     private Double profit;
