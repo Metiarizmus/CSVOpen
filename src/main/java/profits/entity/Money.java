@@ -9,20 +9,16 @@ public class Money {
         this.loss = loss;
     }
 
+    public Money() {
+
+    }
+
     public Double getProfit() {
         return profit;
     }
 
-    public void setProfit(Double profit) {
-        this.profit = profit;
-    }
-
     public Double getLoss() {
         return loss;
-    }
-
-    public void setLoss(Double loss) {
-        this.loss = loss;
     }
 
     @Override
