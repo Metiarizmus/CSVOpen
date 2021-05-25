@@ -4,18 +4,25 @@ import profits.parser.GetPath;
 import profits.entity.Money;
 import profits.parser.ParserCSV;
 
+import java.io.IOException;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        GetPath getPath = new GetPath();
+        GetPath getProp = new GetPath();
 
-        List<Money> list = getPath.getInf().getPars(new Money());
+        ParserCSV<Money> parserCSV = new ParserCSV(getProp.getPath().getProperty("input"),
+                                                   getProp.getPath().getProperty("output"));
 
-        getPath.getInf().writeRemains(list);
+        List<Money> list = parserCSV.getPars(new Money());
+
+        for (Money q : list) {
+            System.out.println(q);
+        }
+
+
+        //parserCSV.writeRemains(list);
 
     }
-
-
 }

@@ -1,6 +1,6 @@
 package profits.entity;
 
-public class Money {
+public class Money<E> {
     private Double profit;
     private Double loss;
 
@@ -20,6 +20,7 @@ public class Money {
     public Double getLoss() {
         return loss;
     }
+
 
     @Override
     public String toString() {

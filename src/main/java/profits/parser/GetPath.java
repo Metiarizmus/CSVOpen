@@ -6,19 +6,16 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class GetPath {
-    private ParserCSV inf = new ParserCSV(getPath().getProperty("input"), getPath().getProperty("output"));
 
-    public ParserCSV getInf() {
-        return inf;
-    }
+    private static String path = "C:\\Users\\Николай\\IdeaProjects\\learnCSV\\src\\main\\resources\\config.properties";
 
-
-    private static Properties getPath() {
+    public Properties getPath() {
         FileInputStream fis;
         Properties properties = new Properties();
 
         try {
-            fis = new FileInputStream("C:\\Users\\Николай\\IdeaProjects\\learnCSV\\src\\main\\resources\\config.properties");
+            fis = new FileInputStream(path);
+
             properties.load(fis);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -27,7 +24,5 @@ public class GetPath {
         }
         return properties;
     }
-
-
 
 }
